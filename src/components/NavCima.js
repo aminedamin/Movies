@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 
 const Navcima =()=>{
@@ -5,9 +6,9 @@ const Navcima =()=>{
       <div className='Menu'>
         <img src='/net.png' alt='Not found'></img>
         <ul>
-  <li><a href="default.asp">Home</a></li>
-  <li><a href="news.asp">TV Show</a></li>
-  <li><a href="contact.asp">Series</a></li>
+  <li><Link to="/" >Home</Link></li>
+  <li><Link to="/cimalist">TV Show</Link></li>
+  {/* <li><a href="contact.asp">Series</a></li> */}
 </ul>
 </div>
     )

@@ -1,6 +1,8 @@
 import {Card,Button} from 'react-bootstrap'
 import Rating from '@mui/material/Rating'
 import { useState } from 'react'
+import { Link } from "react-router-dom"
+
 const Cimacard=({el,movies,setMovies})=>{
     const handleDelete=(a)=> setMovies(movies.filter(el=> el.id != a))
     const [showMore, setShowMore] = useState(false);
@@ -16,7 +18,9 @@ const Cimacard=({el,movies,setMovies})=>{
         {showMore ? el.description : `${el.description.substring(0, 30)}`}
        <button onClick={()=> setShowMore(!showMore)} className="btn">{showMore ? 'Show Less' : 'Show More'}</button>
         <Button variant="outline-danger" onClick={()=> handleDelete(el.id)}>Delete</Button>
+      
       </Card.Body>
+      <Link to={`/Movie/${el.id}`}> <Button variant="success" >Wtach Now</Button></Link>
     </Card>
 
         </div>
